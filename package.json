@@ -1,7 +1,7 @@
 {
-  "name": "GruntProject",
+  "name": "BBS_Demo_Github",
   "version": "0.0.1",
-  "author": "Lin",
+  "author": "lcq",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-csslint": "^0.5.0",
