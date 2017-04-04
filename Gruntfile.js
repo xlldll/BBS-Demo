@@ -3,24 +3,24 @@ function getFileName(o){
 	return o.substring(0,pos);
 }
 module.exports=function(grunt){
-	// require it at the top and pass in the grunt instance
-	//require("time-grunt")(grunt);
+	require("time-grunt")(grunt);
 	grunt.initConfig({
 		pkg      :grunt.file.readJSON("package.json"),
-		//path
+		//PUBLIC
 		publicDir:"dist",
 		pubCss   :"dist/css",
 		pubJs    :"dist/js",
 		pubJsm   :"dist/js/jsmin",
 		pubHtml  :"dist/html",
 		pubImg   :"dist/img",
+		//SRC
 		personDir:"src",
 		pplCss   :"src/css",
 		pplSass  :"src/sass",
 		pplJs    :"src/js",
 		pplHtml  :"src/html",
 		pplImg   :"src/img",
-		//checkCss
+		//检查dist/css内的css文件
 		csslint  :{
 			options :{
 				csslintrc:".csslintrc.json"
@@ -74,7 +74,6 @@ module.exports=function(grunt){
 				banner      :"/*! <%=pkg.name%>-<%=pkg.version%>.js <%= grunt.template.today('yyyy-mm-dd HH:MM') %> */\n"
 			},
 			compressJS:{
-				// 命名错误：文件名多个点的时候
 				files:[{
 					expand:true,
 					cwd   :"<%= pplJs %>",
@@ -112,8 +111,9 @@ module.exports=function(grunt){
 			}
 		}
 	});
-	// Load any grunt plugins found in package.json.
 	require("load-grunt-tasks")(grunt,{scope:"devDependencies"});
+	
+	/*同步删除*/
 	var delFile;
 	//"dist/js/"=distpath
 	//filepath="src/js/*.js"=watchpath
@@ -197,6 +197,7 @@ module.exports=function(grunt){
 			}
 		}
 	});
+	
 	// 配置grunt命令启动时，要执行的任务，这里注意先后顺序。
 	//grunt.registerTask("default",["sass","cssmin","uglify","watch"]);
 	grunt.registerTask("default",["sass","watch"]);
