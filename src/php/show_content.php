@@ -1,8 +1,7 @@
 <?php
 	require 'config.php';
 	//$query = mysql_query("SELECT title,content,user,date FROM question ORDER BY date DESC LIMIT 0,10") or die('SQL 错误！');
-	$query = mysql_query("SELECT (SELECT COUNT(*) FROM comment WHERE titleid=a.id) AS count,a.id,a.title,a.content,a.user,a.date FROM question a ORDER BY a.date ASC LIMIT 0,10")
-	or die('SQL 错误！');
+	$query = mysql_query("SELECT (SELECT COUNT(*) FROM comment WHERE titleid=a.id) AS count,a.id,a.title,a.content,a.user,a.date FROM question a ORDER BY a.date ASC LIMIT 0,10") or die('SQL 错误！');
 	$json = '';
 	while(!!$row = mysql_fetch_array($query,MYSQL_ASSOC)){
 		foreach($row as $key => $value){
@@ -13,7 +12,7 @@
 		//json_encode — 对变量进行 JSON 编码
 		$json .= urldecode(json_encode($row)) . ',';
 	}
-	//print_r($json);
+    //print_r($json);
 	echo '[' . substr($json,0,strlen($json) - 1) . ']';
 	mysql_close();
 ?>

@@ -84,18 +84,17 @@ module.exports = function( grunt ) {
 		connect   : {
 			options : {
 				open       : {
-					target   : 'http://127.0.0.1:9080',
+					target   : 'http://bbs-demo',
 					appName  : 'chrome',
 					callback : function() {}
 				},
-				port       : 9080,
-				hostname   : '127.0.0.1',
+				hostname   : 'bbs-demo',
 				livereload : 35729
 			},
 			index   : {
 				options : {
 					open : true,
-					/* http://127.0.0.1:9080/目录 */
+					port       : 8080,
 					base : [ '.' ]
 				}
 			}
@@ -114,6 +113,7 @@ module.exports = function( grunt ) {
 					livereload : '<%=connect.options.livereload%>'
 				},
 				files   : [
+					'./index.html',
 					'./' + "<%= pplCss %>" + '/{,**/}*.css',
 					'./' + "<%= pplSass %>" + '/{,**/}*.scss',
 					'./' + "<%= pplJs %>" + '/{,**/}*.js'
@@ -230,7 +230,7 @@ module.exports = function( grunt ) {
 		}
 	} );
 	// 配置grunt命令启动时，要执行的任务，这里注意先后顺序。
-	//grunt.registerTask("default",["sass","cssmin","uglify","watch"]);
-	grunt.registerTask( "default",[ "sass","watch" ] );
+	grunt.registerTask("default",["sass","cssmin","uglify","connect","watch"]);
+	// grunt.registerTask( "default",[ "sass","watch" ] );
 };
 
