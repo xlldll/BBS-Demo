@@ -1,6 +1,7 @@
-# CURD数据读取主页演示
+# BBS论坛Demo
 - Create Update Retrieve Delete
-- BBS论坛
+- CURD数据读取主页演示
+
 ## 2015-10-ISSUES:
 1. gruntfile.js 命名错误问题
 2. scss与sass的区别
