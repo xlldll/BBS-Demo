@@ -46,7 +46,7 @@ $(function(){
 	});
 	$('#logout').click(function(){
 		$.removeCookie('user');
-		window.location.href="/11.Lin's Shop/src/html/";
+		window.location.href="/src/html/";
 	});
 
 	/*注册框*/
@@ -56,7 +56,7 @@ $(function(){
 				required :true,
 				minlength:6,
 				remote   :{
-					url :'../php/is_user.php',
+					url :'php/is_user.php',
 					type:'POST'
 				}
 			},
@@ -88,7 +88,7 @@ $(function(){
 		wrapper            :'span',
 		submitHandler      :function(form){
 			$(form).ajaxSubmit({
-				url         :'../php/add.php',
+				url         :'php/add.php',
 				type        :'POST',
 				beforeSubmit:function(formData,jqForm,options){
 					$('#regDiv').popover({
@@ -159,7 +159,7 @@ $(function(){
 		wrapper            :'span',
 		submitHandler      :function(form){
 			$(form).ajaxSubmit({
-				url         :'../php/login.php',
+				url         :'php/login.php',
 				type        :'POST',
 				beforeSubmit:function(formData,jqForm,options){
 					$('#logDiv').popover({
@@ -235,7 +235,7 @@ $(function(){
 	$.ajax({
 		//所有发布的问题以及相对应的评论数量，JSON数组
 		//[{"count":"0","id":"37","title":"“乱世用重典”京东全球购有新意",}]
-		url    :'../php/show_content.php',
+		url    :'php/show_content.php',
 		type   :'POST',
 		//success参数：由服务器返回，并根据dataType参数进行处理后的数据；描述状态的字符串；jqXHR（在jQuery 1.4.x的中，XMLHttpRequest） 对象
 		success:function(response,status,xhr){
@@ -303,7 +303,7 @@ $(function(){
 						if(!commentL.has('form').length){
 							//将加载评论代码放置于此,是为了只添加一次即可
 							$.ajax({
-								url       :'../php/show_comment.php',
+								url       :'php/show_comment.php',
 								type      :'POST',
 								data      :{
 									titleid:$(comment_this).attr('data-id')
@@ -335,7 +335,7 @@ $(function(){
 										//防止在加载时候快速连续点击导致重复事件发生
 										commentL.find('.load_more').button('disable');
 										$.ajax({
-											url       :'../php/show_comment.php',
+											url       :'php/show_comment.php',
 											type      :'POST',
 											data      :{
 												titleid:$(comment_this).attr('data-id'),
@@ -368,7 +368,7 @@ $(function(){
 										var _this=this;
 										//alert(_this);//INPUT
 										commentL.find('form').ajaxSubmit({
-											url         :'../php/add_comment.php',
+											url         :'php/add_comment.php',
 											type        :'POST',
 											beforeSubmit:function(formData,jqForm,options){
 												$(_this).popover({
@@ -476,7 +476,7 @@ $(function(){
 		wrapper            :'span',
 		submitHandler      :function(form){
 			$(form).ajaxSubmit({
-				url         :'../php/add_content.php',
+				url         :'php/add_content.php',
 				type        :'POST',
 				data        :{
 					user   :$.cookie('user'),
