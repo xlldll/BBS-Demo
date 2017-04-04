@@ -1,5 +1,4 @@
 {
-    // Possible Errors
     "duplicate-properties":true,
     "empty-rules":true
 }
