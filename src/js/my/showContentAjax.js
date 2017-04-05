@@ -3,7 +3,7 @@
  */
 $( function() {
 	var jqXHR_content = $.ajax( {
-		url      : 'http://bbs-demo/ajax/content.json',
+		url      : 'ajax/content.json',
 		type     : 'GET',
 		dataType : 'json'
 	} );
@@ -58,7 +58,7 @@ $( function() {
 				//如果不存在表单的话,才新增评论表单带加载评论功能
 				if( !commentL.has( 'form' ).length ) {
 					var jqXHR_comment = $.ajax( {
-						url        : 'http://bbs-demo/ajax/comment.json',
+						url        : 'ajax/comment.json',
 						type       : 'GET',
 						dataType   : 'json',
 						beforeSend : function( jqXHR,settings ) {
@@ -93,11 +93,6 @@ $( function() {
 			} )
 		} )
 	}
-	var addComment = function( data,showComment,commentL ) {
-		console.log( data );
-		console.log( showComment );
-		console.log( commentL );
-	};
 	//为多余文本添加省略号
 	function omitContent( str ) {
 		var newstr = '';
