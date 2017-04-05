@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<meta http-equiv = "x-ua-compatible" content = "IE=edge">
+	<!--禁用缩放功能后，用户只能滚动屏幕，就能让你的网站看上去更像原生应用的感觉-->
+	<meta name = "viewport" content = "width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name = "keywords" content = "BBS_Demo_Github" />
+	<meta name = "author" content = "LCQ" />
+	<title>BBS_Demo_Github</title>
+	<!--[if lt IE 8]>
+	<script>window.location.href = "error/"</script><![endif]-->
+	<link rel = "shortcut icon" type = "image/x-icon" href = "img/favicon.ico" />
+	<link rel = "stylesheet" href = "css/bootstrap.min.css">
+	<link rel = "stylesheet" href = "css/bootstrap-datetimepicker.min.css">
+	<!-- UME样式文件 -->
+	<link rel = "stylesheet" href = "umeditor1.2.3-utf8-php/themes/default/css/umeditor.css">
+	<link rel = "stylesheet" href = "css/index.min.css" />
+</head>
+
+<body>
+<div id = "wrapper">
+	<!--页眉	-->
+	<header>
+		<!--logo-->
+		<section id = "logo">
+			<h1><a href = "javascript:void(0)">Bbs's Demo</a></h1>
+		</section>
+		<!--搜索提问-->
+		<div id = "search">
+			<div class = "input-group">
+				<div class = "input-group-btn">
+					<button type = "button" class = "btn btn-default">商品</button>
+					<button class = "btn btn-default dropdown-toggle" data-toggle = "dropdown" aria-expanded = "false" type = "button">
+						<span class = "caret"></span><span class = "sr-only">下拉菜单</span>
+					</button>
+					<ul class = "dropdown-menu" role = "menu">
+						<li role = "presentation">
+							<a href = "javascript:void(0);" tabindex = "-1" role = "menuitem">图书</a></li>
+						<li role = "presentation">
+							<a href = "javascript:void(0);" tabindex = "-1" role = "menuitem">工具</a></li>
+						<li role = "presentation">
+							<a href = "javascript:void(0);" tabindex = "-1" role = "menuitem">技术</a></li>
+						<li role = "presentation">
+							<a href = "javascript:void(0);" tabindex = "-1" role = "menuitem">问答</a></li>
+					</ul>
+				</div>
+				<input type = "text" class = "form-control" placeholder = "搜索商品、图书或工具..." />
+
+				<div class = "input-group-addon"><span class = "glyphicon glyphicon-search" aria-hidden = "true"></span>
+				</div>
+				<div class = "input-group-btn"><a href = "javascript:void(0);" class = "btn btn-primary">搜索</a></div>
+				<div class = "input-group-btn">
+					<a href = "javascript:void(0);" class = "btn btn-info" id = "question_button">提问</a>
+				</div>
+			</div>
+		</div>
+		<!--注册登录-->
+		<div id = "login">
+			<p>
+				<a href = "javascript:void(0)" id = "reg"><span class = "icon-sign-in"></span>注册</a>
+				<a href = "javascript:void(0)" id = "member"><span class = "icon-user"></span>用户</a>
+				<a href = "javascript:void(0)" id = "log"><span class = "icon-check"></span>登录</a>
+				<a href = "javascript:void(0)" id = "logout"><span class = "icon-sign-out"></span>退出</a>
+			</p>
+		</div>
+	</header>
+	
+	<!--显示问题模块-->
+	<div class = "content" style = "margin:10px;">
+		<div class = "jumbotron">
+			<div class = "container">
+				<div class = "hgroup">
+					<h2>我发布的问题</h2>
+					<h3>2015-10-10 更新</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!--提问面板导航-->
+	<ul class = "nav nav-pills nav-justified" role = "tablist" style = "margin:20px 0 0 0;">
+		<li role = "presentation" class = "active">
+			<a href = "#hotQue" aria-controls = "hotQue" role = "tab" data-toggle = "pill">最热门的提问</a></li>
+		<li role = "presentation">
+			<a href = "#agrQue" aria-controls = "agrQue" role = "tab" data-toggle = "pill">最赞同的提问</a></li>
+		<li role = "presentation">
+			<a href = "#disQue" aria-controls = "disQue" role = "tab" data-toggle = "pill">最争议的提问</a></li>
+	</ul>
+	
+	<!--提问面板内容-->
+	<div class = "tab-content" style = "margin:0 10px 20px 10px;">
+		<div role = "tabpanel" class = "tab-pane fade in active" id = "hotQue">
+			<div class = "panel panel-info">
+				<div class = "panel-heading">为何刘备不管多落魄都有人跟随？</div>
+				<div class = "panel-body">
+					而且王粲还写过这样一句话：灵帝末年，备尝在京师，复与曹公俱还沛国，募召合众。会灵帝崩，天下大乱，备亦起军，从讨董卓。 如果这个事实成立，刘备和公孙瓒混的时候，还去过首都，并结识了曹操。这个结识可不简单，复与曹公俱还沛国，募召合众，这件事儿发生在灵帝死之前，泄露出的消息是什么呢 ？ 当时的西园八校尉的兵，可能是自己招的。皇帝死后，蹇硕拿得住这支部队才叫见鬼，何进...
+				</div>
+				<div class = "panel-footer">Panel footer</div>
+			</div>
+		</div>
+		<div role = "tabpanel" class = "tab-pane fade" id = "agrQue">
+			<div class = "panel panel-success">
+				<div class = "panel-heading">那些年入上百万的人是如何做到的？平均年龄是多少？</div>
+				<div class = "panel-body">
+					之后去的底薪40K/月的一个我认为更适合我的公司管理几百个码农。之后创业。虽然经历了连续创业失败以及生活上的种种困难导致我事实上很穷，但，我自己现在的职业目标和选择依然和薪水无关，只希望能在我自己手上做成多少年以后还能让我骄傲的事情。 我先说创业的。 找关系包俩工程，每个百十来万，然后各种偷工减料，花点钱搞定监理和甲方。搞定。当然了，前提是你的内心能够过得去。千万别在学校啊...
+				</div>
+				<div class = "panel-footer">Panel footer</div>
+			</div>
+		</div>
+		<div role = "tabpanel" class = "tab-pane fade" id = "disQue">
+			<div class = "panel panel-danger">
+				<div class = "panel-heading">程序员想转行当医生，可行吗？</div>
+				<div class = "panel-body">
+					别逗了题主，正常人18岁上医科大学，23岁本科毕业考研，26岁硕士毕业考博，29岁博士毕业。并且这些都是一路顺风的情况下。现在又特么出台个住院医师规范化培训，要求在教学医院轮转三年充当免费劳动力，当然博士可以减免一年（各地政策不同，轮转期间待遇有好有差，一般不到两千，而且不给奖金）。轮转后32岁花了不少钱找了不少关系终于在大医院入编了。刚工作依旧苦逼，晋职称前面有一百多号人排队，何时能排到自己？...
+				</div>
+				<div class = "panel-footer">Panel footer</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!--提问框-->
+	<div id = "quesBox" class = "modal fade" tabindex = "-1" role = "dialog" aria-labelledby = "quesBox">
+		<div class = "modal-dialog modal-lg">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button type = "button" class = "close" data-dismiss = "modal" aria-label = "Close">
+						<span aria-hidden = "true">&times;</span></button>
+					<h4 class = "modal-title" id = "quesTtl">快速提问</h4>
+				</div>
+				<form class = "form-horizontal" role = "form" id = "quesForm">
+					<div class = "modal-body" id = "quesBody">
+						<div class = "form-group clearfix">
+							<label for = "quesN" class = "col-sm-2 control-label text-warning">问题标题</label>
+
+							<div class = "col-sm-10">
+								<input type = "text" name = "quesN" id = "quesN" class = "form-control" placeholder = "输入您的问题题目" pattern = "^[a-zA-Z0-9_-]\w{5,17}$" required />
+							</div>
+						</div>
+						<div class = "form-group clearfix">
+							<label class = "col-sm-2 control-label text-warning">问题描述</label>
+
+							<div class = "col-sm-10 ">
+								<!--style给定宽度可以影响编辑器的最终宽度-->
+								<script type = "text/plain" id = "myEditor" style = "width:700px;height:150px;"></script>
+							</div>
+						</div>
+					</div>
+					<div class = "modal-footer">
+						<div class = "col-sm-7 col-sm-offset-2">
+							<div class = "bg-warning text-warning" id = "quesWarn"></div>
+						</div>
+						<div class = "col-sm-3">
+							<button type = "button" class = "btn btn-default" data-dismiss = "modal" id = "returnQues">返回</button>
+							<div id = "quesDiv">
+								<button type = "submit" class = "btn btn-primary" id = "quesBtn">发布</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--登录框-->
+	<div id = "logBox" class = "modal fade" tabindex = "-1" role = "dialog" aria-labelledby = "logBox">
+		<div class = "modal-dialog modal-lg">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button type = "button" class = "close" data-dismiss = "modal" aria-label = "Close">
+						<span aria-hidden = "true">&times;</span></button>
+					<h4 class = "modal-title" id = "logTtl">用户登录</h4>
+				</div>
+				<form class = "form-horizontal" role = "form" id = "logForm">
+					<div class = "modal-body" id = "logBody">
+						<div class = "form-group clearfix">
+							<label for = "logAccount" class = "col-sm-2 control-label text-warning">帐号</label>
+							
+							<div class = "col-sm-10">
+								<input type = "text" name = "logAccount" id = "logAccount" class = "form-control" placeholder = "输入您的六位数账号" pattern = "^[a-zA-Z0-9_-]\w{5,17}$" required />
+							</div>
+						</div>
+						<div class = "form-group clearfix">
+							<label for = "logPassword" class = "col-sm-2 control-label text-warning">密码</label>
+							
+							<div class = "col-sm-10">
+								<input type = "text" name = "logPassword" id = "logPassword" class = "form-control" placeholder = "输入您的六位数密码" pattern = "^[a-zA-Z0-9_-]\w{5,17}$" required />
+							</div>
+						</div>
+						<div class = "form-group clearfix">
+							<label for = "logExp" class = "col-sm-2 control-label text-info">有效期</label>
+							
+							<div class = "col-sm-10">
+								<div class = "input-group">
+									<span class = "input-group-addon"><input type = "checkbox" name = "logExp" id = "logExp"></span>
+									<span class = "form-control" readonly>一周之内免登录</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class = "modal-footer">
+						<div class = "col-sm-7 col-sm-offset-2">
+							<div class = "bg-warning text-warning" id = "logWarn"></div>
+						</div>
+						<div class = "col-sm-3">
+							<button type = "button" class = "btn btn-default" data-dismiss = "modal" id = "returnLog">返回</button>
+							<div id = "logDiv">
+								<button type = "submit" class = "btn btn-primary" id = "logBtn">登录</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--注册框-->
+	<div id = "regBox" class = "modal fade" tabindex = "-1" role = "dialog" aria-labelledby = "regBox">
+		<div class = "modal-dialog modal-lg">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button type = "button" class = "close" data-dismiss = "modal" aria-label = "Close">
+						<span aria-hidden = "true">&times;</span></button>
+					<h4 class = "modal-title" id = "regTtl">快速注册</h4>
+				</div>
+				<form class = "form-horizontal" role = "form" id = "regForm">
+					<div class = "modal-body" id = "regBody">
+						<div class = "form-group clearfix">
+							<label for = "account" class = "col-sm-2 control-label text-warning">帐号</label>
+
+							<div class = "col-sm-10">
+								<input type = "text" name = "userN" id = "account" class = "form-control" placeholder = "不小于六位a-zA-Z0-9_-" data-toggle = "tooltip" data-placement = "left" title = "必填" required pattern = "^[a-zA-Z0-9_-]\w{5,17}$" />
+							</div>
+						</div>
+						<div class = "form-group clearfix">
+							<label for = "password" class = "col-sm-2 control-label text-warning">密码</label>
+
+							<div class = "col-sm-10">
+								<input type = "text" name = "pw" id = "password" class = "form-control" placeholder = "不小于六位a-zA-Z0-9_-" data-toggle = "tooltip" data-placement = "left" title = "必填" required pattern = "^[a-zA-Z0-9_-]\w{5,17}$" />
+							</div>
+						</div>
+						<div class = "form-group clearfix">
+							<label for = "email" class = "col-sm-2 control-label text-warning">邮箱</label>
+
+							<div class = "col-sm-10">
+								<input type = "text" name = "email" id = "email" class = "form-control" placeholder = "dwight.schultz@gmail.com" data-toggle = "tooltip" data-placement = "left" title = "必填" required pattern = "^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$" />
+							</div>
+						</div>
+						<div class = "form-group clearfix">
+							<label class = "col-sm-2 control-label text-info">性别</label>
+
+							<div class = "col-sm-10">
+								<div class = "btn-group" data-toggle = "buttons">
+									<label class = "btn btn-primary active"><input type = "radio" name = "sex" value = "男" autocomplete = "off" checked>男</label>
+									<label class = "btn btn-primary">
+										<input type = "radio" name = "sex" value = "女" autocomplete = "off">女</label>
+								</div>
+							</div>
+						</div>
+						<div class = "form-group clearfix">
+							<label class = "col-sm-2 control-label text-info">爱好</label>
+
+							<div class = "col-sm-10">
+								<div class = "btn-group" data-toggle = "buttons">
+									<label class = "btn btn-primary ">
+										<input type = "checkbox" autocomplete = "off" name = "hobby" value = "体育">体育
+									</label> <label class = "btn btn-primary">
+									<input type = "checkbox" autocomplete = "off" name = "hobby" value = "艺术">艺术
+								</label>
+									<label class = "btn btn-primary">
+										<input type = "checkbox" autocomplete = "off" name = "hobby" value = "音乐">音乐
+									</label> <label class = "btn btn-primary active">
+									<input type = "checkbox" autocomplete = "off" name = "hobby" value = "电脑" checked>电脑
+								</label>
+									<label class = "btn btn-primary">
+										<input type = "checkbox" autocomplete = "off" name = "hobby" value = "游戏">游戏
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class = "form-group clearfix">
+							<label for = "account" class = "col-sm-2 control-label text-info">生日</label>
+
+							<div class = "col-sm-10">
+								<div class = "input-group date form_date" data-link-format = "yyyy-mm-dd">
+									<span class = "input-group-addon"><span class = "glyphicon glyphicon-calendar"></span></span>
+									<input class = "form-control" size = "16" type = "text" value = "" name = "birthday" readonly>
+									<span class = "input-group-addon"><span class = "glyphicon glyphicon-remove"></span></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class = "modal-footer">
+						<div class = "col-sm-7 col-sm-offset-2">
+							<div class = "bg-warning text-warning" id = "regWarn"></div>
+						</div>
+						<div class = "col-sm-3">
+							<button type = "button" class = "btn btn-default" data-dismiss = "modal" id = "returnReg">返回</button>
+							<div id = "regDiv">
+								<button type = "submit" class = "btn btn-primary" id = "regBtn">注册</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 引用jquery，UME依赖-->
+<script src = "js/jquery.min.js"></script>
+
+<script type = "text/javascript" src = "js/bootstrap.min.js"></script>
+<script type = "text/javascript" src = "js/bootstrap-datetimepicker.min.js"></script>
+<script type = "text/javascript" src = "js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type = "text/javascript" src = "js/jquery.validate.js"></script>
+<script type = "text/javascript" src = "js/jquery.form.js"></script>
+<script type = "text/javascript" src = "js/jquery.cookie.js"></script>
+
+<!-- 引入 etpl，UME依赖-->
+<script src = "js/template.min.js"></script>
+<!-- UME配置文件 -->
+<script type = "text/javascript" src = "umeditor1.2.3-utf8-php/umeditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type = "text/javascript" src = "umeditor1.2.3-utf8-php/umeditor.js"></script>
+<!-- 语言包文件 -->
+<script type = "text/javascript" src = "umeditor1.2.3-utf8-php/lang/zh-cn/zh-cn.js"></script>
+
+<script type = "text/javascript" charset = "UTF-8" src = "js/my/loginout.min.js" ></script>
+<script type = "text/javascript" charset = "UTF-8" src = "js/my/shwoContent.min.js" ></script>
+<script type = "text/javascript" charset = "UTF-8" src = "js/my/quesBox.min.js" ></script>
+
+</body>
+</html>
