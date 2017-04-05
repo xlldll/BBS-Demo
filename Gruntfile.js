@@ -35,7 +35,7 @@ module.exports = function( grunt ) {
 				files   : [ {
 					expand : true,
 					cwd    : "<%= pplSass %>",
-					src    : [ "**/*.scss" ],
+					src    : ["{,*/}*.scss"],
 					dest   : "<%= pplCss %>",
 					ext    : ".css"
 				} ],
@@ -50,9 +50,10 @@ module.exports = function( grunt ) {
 				files : [ {
 					expand : true,
 					cwd    : "<%= pplCss %>",
-					src    : [ "*.css" ],
+					src    : ["{,*/}*.css",'!*min.css'],
 					dest   : "<%= pubCss %>",
-					ext    : ".min.css"
+					ext    : ".min.css",
+					extDot: 'last'
 				} ]
 			}
 		},
@@ -68,15 +69,16 @@ module.exports = function( grunt ) {
 		uglify    : {
 			options    : {
 				stripBanners : true,
-				banner       : "/*! <%=pkg.name%>-<%=pkg.version%>.js <%= grunt.template.today('yyyy-mm-dd HH:MM') %> */\n"
+				banner       : "/*<%=pkg.name%>-<%=pkg.version%>.js <%= grunt.template.today('yyyy-mm-dd HH:MM') %> */\n"
 			},
 			compressJS : {
 				files : [ {
 					expand : true,
 					cwd    : "<%= pplJs %>",
-					src    : "**/*.js",
+					src    : ["{,*/}*.js",'!*min.js'],
 					dest   : "<%= pubJs %>",
-					ext    : ".min.js"
+					ext    : ".min.js",
+					extDot: 'last'
 				} ]
 			}
 		},

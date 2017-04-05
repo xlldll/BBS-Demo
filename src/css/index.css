@@ -253,69 +253,80 @@ header #login #logout .icon-sign-out:before {
   margin: 0;
 }
 
-.content h3 {
-  color: #369;
+/*我发布的问题*/
+.myQues {
+  padding: 15px 0;
 }
-.content h4 {
+.myQues h4 {
   color: #666;
-  font-weight: normal;
 }
-.content .editor {
+.myQues h3 {
+  color: #369;
+  margin: 10px 0;
+}
+.myQues hr {
+  color: #ccc;
+  height: 3px;
+}
+
+.quesContent {
   line-height: 180%;
   color: #333;
 }
-.content .bottom {
-  padding: 5px 0 0 0;
+
+.quesFooter {
+  padding: 10px 0;
+  color: #369;
+  cursor: pointer;
+  overflow: hidden;
 }
-.content .up {
+
+.showComment {
+  float: left;
+}
+
+.hideContent {
   float: right;
+}
+
+.showAllContent {
   color: #369;
   cursor: pointer;
 }
-.content .down {
-  font-weight: normal;
-  color: #369;
-  cursor: pointer;
-}
-.content hr {
-  color: #ccc;
-  height: 1px;
-}
-.content .comment {
-  color: #369;
-  cursor: pointer;
-}
-.content .comment_list {
+
+.commentList {
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 5px 10px;
+  margin-bottom: 10px;
   display: none;
 }
-.content .comment_list dl {
+.commentList dl {
   margin: 0;
   padding: 3px 0px 5px 0;
 }
-.content .comment_list dl dt {
+.commentList dl dt {
   margin: 0;
   padding: 5px 0 0 0;
   color: #369;
 }
-.content .comment_list dl dd {
+.commentList dl dd {
   margin: 0;
   padding: 0;
   color: #333;
   line-height: 180%;
 }
-.content .comment_list dl dd .date {
+.commentList dl dd .date {
   color: #666;
 }
-.content .comment_list dl .comment_content {
+.commentList dl .comment_content {
   border-bottom: 1px solid #ccc;
 }
-.content .comment_add {
+
+.comment_add {
   text-align: right;
 }
-.content .comment_add textarea {
+.comment_add textarea {
   width: 98%;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -326,19 +337,21 @@ header #login #logout .icon-sign-out:before {
   margin: 0 0 5px 0;
   resize: none;
 }
-.content .comment_add input {
+.comment_add input {
   cursor: pointer;
 }
-.content .comment_load dd {
+
+.comment_load dd {
   background: url(../img/comment_load.gif) no-repeat 100px center;
 }
-.content .load_more {
+
+.load_more {
   width: 100%;
   margin: 10px 0 0 0;
   height: 30px;
   line-height: 30px;
 }
-.content .load_more img {
+.load_more img {
   padding: 5px 0 0 0;
 }
 

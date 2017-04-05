@@ -2,7 +2,7 @@
  * Created by LinChuQiang.
  */
 $( function() {
-	//替换特殊字符的函数
+	//替换特殊字符的函数f
 	function replacePos(strObj,pos,replaceText){
 		return strObj.substr(0,pos-1)+replaceText+strObj.substring(pos,strObj.length);
 	}
@@ -49,6 +49,7 @@ $( function() {
 				}
 				$('.bottom .up').hide();
 			});
+			
 			//点击显示全部时
 			$.each($('.editor'),function(index,value){
 				//委托绑定,通过父节点on()来绑定
@@ -67,6 +68,7 @@ $( function() {
 					$('.editor .down').eq(index).show();
 				});
 			});
+			
 			//点击查看评论时
 			$.each($('.bottom'),function(index,value){
 				//委托绑定,通过父节点on()来绑定

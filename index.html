@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<base href = "http://bbs-demo/src/">
+	<base href = "http://bbs-demo:8080/src/">
 	<meta http-equiv = "x-ua-compatible" content = "IE=edge">
 	<!--禁用缩放功能后，用户只能滚动屏幕，就能让你的网站看上去更像原生应用的感觉-->
 	<meta name = "viewport" content = "width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -76,6 +76,21 @@
 				<div class = "hgroup">
 					<h2>我发布的问题</h2>
 					<h3>2015-10-10 更新</h3>
+				</div>
+				<div class="myQues">
+					<h4><strong>value.user</strong> 发表于 <strong>value.date</strong></h4>
+					<h3>value.title</h3>
+					<div class="quesContent">
+						value.content
+					</div>
+					<div class="quesFooter">
+						<span class="showComment" data-id="value.id">value.count条评论</span>
+						<span class="hideContent">收起评论</span>
+					</div>
+					<hr noshade="noshade" size="3">
+					<div class="commentList">
+						
+					</div>
 				</div>
 			</div>
 		</div>
@@ -330,8 +345,10 @@
 <script type = "text/javascript" src = "umeditor1.2.3-utf8-php/lang/zh-cn/zh-cn.js"></script>
 
 <script type = "text/javascript" charset = "UTF-8" src = "js/my/loginout.js" ></script>
-<script type = "text/javascript" charset = "UTF-8" src = "js/my/shwoContent.js" ></script>
+<script type = "text/javascript" charset = "UTF-8" src = "js/my/showContentAjax.js" ></script>
+<!--<script type = "text/javascript" charset = "UTF-8" src = "js/my/shwoContent.js" ></script>-->
 <script type = "text/javascript" charset = "UTF-8" src = "js/my/quesBox.js" ></script>
+<!--<script type = "text/javascript" charset = "UTF-8" src = "js/my/DeferredPromise.js" ></script>-->
 
 </body>
 </html>
