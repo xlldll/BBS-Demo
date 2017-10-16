@@ -1,7 +1,9 @@
 /**
  * Created by LinChuQiang.
+ * 这是一个旧版的，处理ajax数据
  */
 $( function() {
+	
 	//替换特殊字符的函数f
 	function replacePos(strObj,pos,replaceText){
 		return strObj.substr(0,pos-1)+replaceText+strObj.substring(pos,strObj.length);

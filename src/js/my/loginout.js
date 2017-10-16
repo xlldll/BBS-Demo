@@ -4,6 +4,9 @@
 $( function() {
 	/***************************全局模块*****************************/
 	
+	//后台服务器url地址
+	var url='bbs-github:80';
+	
 	//注册表单的生日日期选择器
 	$('.form_date').datetimepicker({
 		language      :'zh-CN',
@@ -71,7 +74,7 @@ $( function() {
 				required :true,
 				minlength:6,
 				remote   :{
-					url :'http://bbs-demo/src/php/is_user.php',
+					url :'http://'+url+'/src/php/is_user.php',
 					type:'POST'
 				}
 			},
@@ -103,7 +106,7 @@ $( function() {
 		wrapper            :'span',
 		submitHandler      :function(form){
 			$(form).ajaxSubmit({
-				url         :'http://bbs-demo/src/php/add.php',
+				url         :'http://'+url+'/src/php/add.php',
 				type        :'POST',
 				beforeSubmit:function(formData,jqForm,options){
 					$('#regDiv').popover({
@@ -174,7 +177,7 @@ $( function() {
 		wrapper            :'span',
 		submitHandler      :function(form){
 			$(form).ajaxSubmit({
-				url         :'http://bbs-demo/src/php/login.php',
+				url         :'http://'+url+'/src/php/login.php',
 				type        :'POST',
 				beforeSubmit:function(formData,jqForm,options){
 					$('#logDiv').popover({

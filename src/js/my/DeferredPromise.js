@@ -1,5 +1,6 @@
 /**
  * Created by LinChuQiang.
+ * Deferred 简单示例用法
  */
 $(function() {
 	function asyncEvent() {

@@ -3,6 +3,10 @@
  */
 $( function() {
 	
+	
+	//后台服务器url地址
+	var url='bbs-github:80';
+	
 	//点击提问按钮时，根据cookie是否弹出问题发布框
 	$('#question_button').click(function(){
 		if($.cookie('user')){
@@ -36,6 +40,7 @@ $( function() {
 	um.ready(function() {
 		um.setContent('<p>如题所示。</p>');
 	});
+	
 	//清空内容
 	um.execCommand('cleardoc');
 	
@@ -65,7 +70,7 @@ $( function() {
 		wrapper            :'span',
 		submitHandler      :function(form){
 			$(form).ajaxSubmit({
-				url         :'http://bbs-demo/src/php/add_content.php',
+				url         :'http://'+url+'/src/php/add_content.php',
 				type        :'POST',
 				data        :{
 					user   :$.cookie('user'),

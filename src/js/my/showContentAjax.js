@@ -1,9 +1,14 @@
 /**
  * Created by LinChuQiang.
+ * 这是一个新版的，采用$.Deferred对象来处理ajax
  */
+
 $( function() {
+	//后台服务器url地址
+	var url='bbs-github:80';
+	var urlBase='bbs-demo:8080';
 	var jqXHR_content = $.ajax( {
-		url      : 'http://bbs-demo:8080/src/ajax/content.json',
+		url      : 'http://'+urlBase+'/src/ajax/content.json',
 		type     : 'GET',
 		dataType : 'json'
 	} );
@@ -11,7 +16,7 @@ $( function() {
 	var waitA = function( showComment,commentL ) {
 		var dfd = $.Deferred();
 		$.ajax( {
-			url        : 'http://bbs-demo/src/php/show_comment.php',
+			url        : 'http://'+url+'/src/php/show_comment.php',
 			type       : 'POST',
 			dataType   : 'json',
 			jsonp      : false,
@@ -30,7 +35,7 @@ $( function() {
 	var waitB = function( showComment,page,commentL ) {
 		var dfd = $.Deferred();
 		$.ajax( {
-			url        : 'http://bbs-demo/src/php/show_comment.php',
+			url        : 'http://'+url+'/src/php/show_comment.php',
 			type       : 'POST',
 			dataType   : 'json',
 			jsonp      : false,
@@ -51,7 +56,7 @@ $( function() {
 	var waitC = function( input,param ) {
 		var dfd = $.Deferred();
 		$.ajax( {
-			url        : 'http://bbs-demo/src/php/add_comment.php',
+			url        : 'http://'+url+'/src/php/add_comment.php',
 			type       : 'POST',
 			data       : param,
 			beforeSend : function() {
